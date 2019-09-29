@@ -21,7 +21,7 @@ You should see this:
 ## The lesson (and it is a lesson)
 
 
-### Part 1. Hooks equivalent of componentDidMount
+### Part 1: useEffect, the equivalent of componentDidMount, componentWillUnmount, componentWillUpdate.
 
 We're going to fetch todos when the `<App/>` component mounts.
 
