@@ -84,7 +84,7 @@ In `<App>`, define a `handleTodoClick` handler and pass it down into `<Todos>`
   );
 ```
 
-Then register the `handleTodoClick` handler as an `onClick` callback.
+Then register the `handleTodoClick` handler as an `onClick` callback on the Todo.
 
 ```jsx
 const Todos = ({ todos, handleTodoClick }) => {
