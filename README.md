@@ -21,7 +21,7 @@ You should see this:
 ## The lesson (and it is a lesson)
 
 
-### Part 1: Fetch data using useEffect.
+### Part 1: useEffect hook.
 
 We're going to fetch todos when the `<App/>` component mounts.
 
@@ -34,3 +34,5 @@ We're going to fetch todos when the `<App/>` component mounts.
     getTodos(); // ping server & console.log the result.
   }, []);
 ```
+
+Here are the [official docs for for useEffect](https://reactjs.org/docs/hooks-effect.html).
