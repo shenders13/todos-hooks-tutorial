@@ -35,16 +35,13 @@ const App = () => {
     <div className="app">
       <Todos
         todos={[
-          { id: 1, name: "7am. Wake up in the morning.", isComplete: false },
-          { id: 2, name: "Be fresh, gotta go downstairs.", isComplete: false },
+          { id: 1, name: "Todo 1", isComplete: false },
+          { id: 2, name: "Todo 2", isComplete: false },
           {
             id: 3,
-            name: "Have my bowl, gotta have cereal.",
+            name: "Todo 3.",
             isComplete: false
-          },
-          { id: 4, name: "Get down to the bus stop", isComplete: true },
-          { id: 5, name: "Choose my seat.", isComplete: false },
-          { id: 6, name: "Look forward to the weekend.", isComplete: false }
+          }
         ]}
       />
     </div>
