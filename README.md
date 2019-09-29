@@ -66,7 +66,23 @@ const App = () => {
 };
 ```
 
+### Part 3: Another example of updating state.
 
+When you click on a todo, we want to toggle whether or not that todo is completed.
+
+In `<App>`, define a `handleTodoClick` handler and pass it down into `<Todos>`
+
+```jsx
+  const handleTodoClick = (todo) => {
+    console.log('handleTodoClick!')
+  }
+
+  return (
+    <div className="app">
+      <Todos todos={todos} handleTodoClick={handleTodoClick}/>
+    </div>
+  );
+```
 
 
 
