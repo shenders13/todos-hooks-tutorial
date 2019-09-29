@@ -1,24 +1,33 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./App.css";
 
 // -----------------------------------------------------
 // ------ Todo Component. Show an individual item ------
 // -----------------------------------------------------
 
-const Todo = ({ todo }) => (
-  <li className={`todo ${todo.isComplete ? "complete" : ""}`}>{todo.name}</li>
+const Todo = ({ todo, handleTodoClick }) => (
+  <li
+    className={`todo ${todo.isComplete ? "complete" : ""}`}
+    onClick={handleTodoClick}
+  >
+    {todo.name}
+  </li>
 );
 
 // -----------------------------------------------------
 // ---- Todos. Lists all the todos in a black card -----
 // -----------------------------------------------------
 
-const Todos = ({ todos }) => {
+const Todos = ({ todos, handleTodoClick }) => {
   return (
     <div className="todos">
       <h2 className="title">Todos</h2>
       {todos.map((todo, index) => (
-        <Todo todo={todo} key={index} />
+        <Todo
+          todo={todo}
+          key={index}
+          handleTodoClick={() => handleTodoClick(todo)}
+        />
       ))}
     </div>
   );
@@ -29,42 +38,36 @@ const Todos = ({ todos }) => {
 // -----------------------------------------------------
 
 const App = () => {
-  getTodos(); // ping server & console.log the result.
+  const [todos, setTodos] = useState([]);
+
+  useEffect(() => {
+    fetch("https://classy-snapper.glitch.me/todos")
+      .then(response => {
+        return response.json();
+      })
+      .then(json => {
+        setTodos(json);
+      });
+  }, []);
+
+  const handleTodoClick = todoToUpdate => {
+    const updatedTodos = todos.map(todo => {
+      if (todo.id === todoToUpdate.id) {
+        return {
+          ...todo,
+          isComplete: !todo.isComplete
+        };
+      }
+      return todo;
+    });
+    setTodos(updatedTodos);
+  };
 
   return (
     <div className="app">
-      <Todos
-        todos={[
-          { id: 1, name: "7am. Wake up in the morning.", isComplete: false },
-          { id: 2, name: "Be fresh, gotta go downstairs.", isComplete: false },
-          {
-            id: 3,
-            name: "Have my bowl, gotta have cereal.",
-            isComplete: false
-          },
-          { id: 4, name: "Get down to the bus stop", isComplete: true },
-          { id: 5, name: "Choose my seat.", isComplete: false },
-          { id: 6, name: "Look forward to the weekend.", isComplete: false }
-        ]}
-      />
+      <Todos todos={todos} handleTodoClick={handleTodoClick} />
     </div>
   );
-};
-
-// -----------------------------------------------------
-// ----------------- Helper functions ------------------
-// -----------------------------------------------------
-
-// getTodos pings the server and console.logs the response.
-
-const getTodos = () => {
-  fetch("https://classy-snapper.glitch.me/todos")
-    .then(response => {
-      return response.json();
-    })
-    .then(json => {
-      console.log("json: ", json);
-    });
 };
 
 export default App;
