@@ -36,3 +36,38 @@ We're going to fetch todos when the `<App/>` component mounts.
 ```
 
 Here are the [official docs for for useEffect](https://reactjs.org/docs/hooks-effect.html).
+
+### Part 2: useState hook.
+
+We're going to store the result of the fetch in local state using `useState`.
+
+- Import `useState` from React like this: `import React, { useEffect, useState } from "react";`.
+- Initialize local state using `useState` but update it when the GET request comes back:
+
+```jsx
+const App = () => {
+  const [todos, setTodos] = useState([]);
+
+  useEffect(() => {
+    fetch("https://classy-snapper.glitch.me/todos")
+      .then(response => {
+        return response.json();
+      })
+      .then(json => {
+        setTodos(json);
+      });
+  }, []);
+
+  return (
+    <div className="app">
+      <Todos todos={todos} />
+    </div>
+  );
+};
+```
+
+
+
+
+
+
