@@ -84,6 +84,19 @@ In `<App>`, define a `handleTodoClick` handler and pass it down into `<Todos>`
   );
 ```
 
+Then register the `handleTodoClick` handler as an `onClick` callback.
 
+```jsx
+const Todos = ({ todos, handleTodoClick }) => {
+  return (
+    <div className="todos">
+      <h2 className="title">Todos</h2>
+      {todos.map((todo, index) => (
+        <Todo todo={todo} key={index} onClick={() => handleTodoClick(todo)}/>
+      ))}
+    </div>
+  );
+};
+```
 
 
