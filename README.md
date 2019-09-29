@@ -109,7 +109,7 @@ const Todos = ({ todos, handleTodoClick }) => {
     <div className="todos">
       <h2 className="title">Todos</h2>
       {todos.map((todo, index) => (
-        <Todo todo={todo} key={index} handleTodoClick={handleTodoClick} />
+        <Todo todo={todo} key={index} handleTodoClick={()=>handleTodoClick(todo)} />
       ))}
     </div>
   );
