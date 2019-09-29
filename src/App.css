@@ -14,7 +14,7 @@
 
 .todos {
   background-color: #3c424a;
-  padding: 24px;
+  padding: 24px 18px;
   border-radius: 4px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
@@ -26,8 +26,12 @@
 }
 
 .todo {
-  margin: 12px 0;
   cursor: pointer;
+  padding: 12px 0;
+}
+
+.todo:hover {
+  background-color: #45494d;
 }
 
 .complete {
