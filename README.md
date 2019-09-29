@@ -19,3 +19,18 @@ You should see this:
 
 
 ## The lesson (and it is a lesson)
+
+
+### Part 1. Hooks equivalent of componentDidMount
+
+We're going to fetch todos when the `<App/>` component mounts.
+
+- Import `useEffect` from React like this: `import React, { useEffect } from "react";`.
+- Fetch data when App component mounts:
+
+```js
+  useEffect(() => {
+    console.log('Inside useEffect')
+    getTodos(); // ping server & console.log the result.
+  }, []);
+```
