@@ -116,4 +116,19 @@ const Todos = ({ todos, handleTodoClick }) => {
 };
 ```
 
+Now lets add the business logic for `handleTodoClick`.
 
+```jsx
+  const handleTodoClick = todoToUpdate => {
+    const updatedTodos = todos.map(todo => {
+      if (todo.id === todoToUpdate.id) {
+        return {
+          ...todo,
+          isComplete: !todo.isComplete
+        };
+      }
+      return todo;
+    });
+    setTodos(updatedTodos);
+  };
+```
