@@ -87,12 +87,29 @@ In `<App>`, define a `handleTodoClick` handler and pass it down into `<Todos>`
 Then register the `handleTodoClick` handler as an `onClick` callback on the Todo.
 
 ```jsx
+// -----------------------------------------------------
+// ------ Todo Component. Show an individual item ------
+// -----------------------------------------------------
+
+const Todo = ({ todo, handleTodoClick }) => (
+  <li
+    className={`todo ${todo.isComplete ? "complete" : ""}`}
+    onClick={handleTodoClick}
+  >
+    {todo.name}
+  </li>
+);
+
+// -----------------------------------------------------
+// ---- Todos. Lists all the todos in a black card -----
+// -----------------------------------------------------
+
 const Todos = ({ todos, handleTodoClick }) => {
   return (
     <div className="todos">
       <h2 className="title">Todos</h2>
       {todos.map((todo, index) => (
-        <Todo todo={todo} key={index} onClick={() => handleTodoClick(todo)}/>
+        <Todo todo={todo} key={index} handleTodoClick={handleTodoClick} />
       ))}
     </div>
   );
