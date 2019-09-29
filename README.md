@@ -21,7 +21,7 @@ You should see this:
 ## The lesson (and it is a lesson)
 
 
-### Part 1: useEffect, the equivalent of componentDidMount, componentWillUnmount, componentWillUpdate.
+### Part 1: Fetch data using useEffect.
 
 We're going to fetch todos when the `<App/>` component mounts.
 
