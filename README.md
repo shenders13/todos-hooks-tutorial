@@ -1,6 +1,6 @@
-## Build a Todo app using React Hooks
+# Build a Todo app using React Hooks
 
-### Getting set up
+## Getting set up
 
 1. Clone this repo from your terminal. `git clone https://github.com/shenders13/todos-hooks-tutorial.git`
 
@@ -12,3 +12,4 @@
 
 
 
+## The lesson (and it is a lesson)
