@@ -1,12 +1,14 @@
-### Build a Todo app using React Hooks
+## Build a Todo app using React Hooks
 
-<img src='' />
+### Getting set up
 
+1. Clone this repo from your terminal. `git clone https://github.com/shenders13/todos-hooks-tutorial.git`
 
+2. CD into the repo. `cd todos-hooks-tutorial`
 
-### `npm start`
+3. Run the local server. `npm start`.
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+4. Open [http://localhost:3000](http://localhost:3000)
+
 
 
