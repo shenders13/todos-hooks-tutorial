@@ -12,6 +12,10 @@
 
 5. Open [http://localhost:3000](http://localhost:3000)
 
+You should see this:
+
+<img src='https://res.cloudinary.com/small-change/image/upload/v1569728414/Screen_Shot_2019-09-28_at_8.29.13_PM_iudmo7.png' />
+
 
 
 ## The lesson (and it is a lesson)
