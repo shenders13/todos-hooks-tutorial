@@ -6,9 +6,11 @@
 
 2. CD into the repo. `cd todos-hooks-tutorial`
 
-3. Run the local server. `npm start`.
+3. Install node modules. `npm install`.
 
-4. Open [http://localhost:3000](http://localhost:3000)
+4. Run the local server. `npm start`.
+
+5. Open [http://localhost:3000](http://localhost:3000)
 
 
 
