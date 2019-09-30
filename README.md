@@ -170,5 +170,13 @@ const NewTask = () => {
   ...
 ```
 
+Using hooks for GQL queries takes the "fetching" outside of the JSX i.e. we don't need to do:
+
+```jsx
+    return (
+      <CurrentUser>
+        {currentUser => {
+        ...
+```
 
 
