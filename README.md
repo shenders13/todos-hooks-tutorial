@@ -132,3 +132,43 @@ Now lets add the business logic for `handleTodoClick`.
     setTodos(updatedTodos);
   };
 ```
+
+## Extra content: GQL queries/mutations using React Hooks.
+
+1. Define the query e.g. `CurrentUser` in `Jello/graphql/queries/query.graphql`.
+
+```js
+query CurrentUser {
+  viewer {
+    id
+    email
+    firstName
+    fullName
+    profilePhotoUrl
+    customerFollowers {
+      id
+      customerId
+      isStarred
+    }
+  }
+}
+```
+
+2. Import the hook in component file.
+
+```js
+import { useCurrentUserQuery, CurrentUser } from 'Jello/graphql/__generated__/jello-operation-components'
+```
+
+3. Fire the query e.g. `FrontPlugin/components/NewOrEditTask/NewTask.tsx`
+
+```jsx
+const NewTask = () => {
+  const currentUserQuery = useCurrentUserQuery()
+  const currentUser: CurrentUser.Viewer | null =
+    (currentUserQuery && currentUserQuery.data && currentUserQuery.data.viewer) || null
+  ...
+```
+
+
+
